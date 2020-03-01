@@ -61,6 +61,11 @@ public class Multiplication {
 
         long finish = System.currentTimeMillis();
         long timeConsumedMillis = finish - start;
+        try {
+            Thread.sleep(50L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         printMatrix(res);
         System.out.println("Многопоточное выполнение - " + timeConsumedMillis);
     }
@@ -89,6 +94,7 @@ public class Multiplication {
         sortShellMult(shArray);
         finish = System.currentTimeMillis();
         timeConsumedMillis = finish - start;
+
         printArray(shArray);
 
         System.out.println("\nМногопоточная сортировка Шелла заняла " + timeConsumedMillis);
